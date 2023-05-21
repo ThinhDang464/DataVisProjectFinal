@@ -1,14 +1,14 @@
 //GRAPH 1: MULTI LINE CHART
-var w = 900;
-var h = 450;
-var padding = 45;
+var w = 1000;
+var h = 500;
+var padding = 55;
 
 var svg = d3.select("#chart")
     .append("svg")
     .attr("width", w)
     .attr("height", h);
 
-d3.csv("../csv/SyrianAsylum.csv").then(function(data) {
+d3.csv("SyrianAsylum.csv").then(function(data) {
     data.forEach(function(d) {
         d.Year = +d.Year; //convert year and number to num
         d.number = +d.number;
@@ -147,16 +147,15 @@ d3.csv("../csv/SyrianAsylum.csv").then(function(data) {
     .attr("x", -h/2)
     .attr("y", padding-30)
     .style("text-anchor", "middle")
-    .attr("class", "leftTag")
-    .text("Number of Syrians (millions)");
+    .text("number of Syrians (millions)");
 });
 
 // GRAPH 2: BAR CHART 
 
 // set the dimensions and margins of the graph
-var width = 900;
-var height = 450;
-var barpad= 55;
+var width = 1000;
+var height = 500;
+var barpad=55;
 
 var originalData;// used this to save the original state of data so we can have reset button later
 
@@ -172,7 +171,7 @@ var svg2 = d3.select("#chart2").append("svg") // assuming a new div "chart2" for
    
 
 // load the data
-d3.csv("../csv/idp.csv").then(function(data) {
+d3.csv("idp.csv").then(function(data) {
 
   // format the data
   data.forEach(function(d) {
@@ -236,8 +235,7 @@ d3.csv("../csv/idp.csv").then(function(data) {
    .attr("x", -height/2)
    .attr("y", padding-30)
    .style("text-anchor", "middle")
-   .attr("class", "leftTag")
-   .text("Number of Syrians (millions)");   
+   .text("number of Syrians (millions)");   
   
   var caption = d3.select("#chart2")
         .append("p")
@@ -323,8 +321,8 @@ d3.select("#button2")
 // GRAPH 3: AREA CHART
 
 // set the dimensions and margins of the graph
-var areaWidth = 900;
-var areaHeight = 450;
+var areaWidth = 1000;
+var areaHeight = 500;
 var areaPad = 55;
 
 // set the ranges
@@ -343,7 +341,7 @@ var area = d3.area()
     .y1(function(d) { return yArea(d.Inflation); }); // y1 is the scaled value of each data point
 
 // load the data
-d3.csv("../csv/inflation.csv").then(function(data) {
+d3.csv("inflation.csv").then(function(data) {
 
   // format the data
   data.forEach(function(d) {
@@ -427,7 +425,6 @@ circles2
  .attr("x", -areaHeight/2)
  .attr("y", areaPad-30)
  .style("text-anchor", "middle")
- .attr("class", "leftTag")
  .text("Percentage %");
 });
 
@@ -439,8 +436,8 @@ var data = [
     {"age_group": "60+", "percent_total": 3.2}
 ];
 
-var width2 = 900
-    height2 = 450
+var width2 = 1000
+    height2 = 500
     margin = 40
 
 var radius = Math.min(width2, height2) / 2 - margin
@@ -543,4 +540,3 @@ legend.selectAll()
         .append("p")
         .attr("class", "caption")
         .text("Figure 4: Demographic distribution by age in percentage for Syrian migrants in 2016");
-
