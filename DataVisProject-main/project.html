@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Data Visualisation" />
+        <meta name="keywords" content="HTML, CSS, Javascript" />
+        <meta name="author" content="Vu Gia Thinh Dang, Mohammad Kassem" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Font and Symbols -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link rel="stylesheet" href="https://use.typekit.net/tgj6svm.css">
+
+
+        <!-- Styling -->
+        <link rel="stylesheet" href="styling/animations.css">
+        <link rel="stylesheet" href="styling/graphs.css">
+        <link rel="stylesheet" href="styling/siteStyle.css">
+
+        <title>Dang and Kasem project</title>
+        
+    </head>
+    <body>
+
+        <header>
+            <nav>
+                <label>
+                    <img src="img/logo.png" alt="swinburne logo">
+                </label>
+
+                <div></div>
+            </nav>
+        </header>
+
+
+        <div class="header">
+            <div class="infoHolder">
+
+                <h1> 
+                    Analyzing Migration Patterns and Economic Impact: A Study of Syrian Migration Trends and Age Composition 
+                    <i class="fa-solid fa-chart-pie"></i>
+                </h1>
+
+                <p>
+                    <i class="fa-solid fa-rocket"></i> 
+                    By Thinh & Mohammad
+                </p>
+
+            </div>
+
+            <img class="mapImage" src="img/guy.png" alt="">
+        </div>
+
+
+        <div class="graphHolder">
+            <div class="graphInner">
+      
+                <div class="buttonBar">
+
+                    <button id="btn-as" onclick="setButton('btn-as', 'bar1', 'chart')">
+                        <i class="fa-solid fa-diagram-project"></i> Asylum Seekers
+                        <div class="bottomBar bar1"></div>
+                    </button>
+
+                    <button id="btn-idp" onclick="setButton('btn-idp', 'bar2','chart2')">
+                        <i class="fa-solid fa-chart-simple"></i> Syrian IDPs
+                        <div class="bottomBar bar2"></div>
+                    </button>
+                    <button id="btn-inf" onclick="setButton('btn-inf', 'bar3', 'chart3')">
+                        <i class="fa-solid fa-chart-area"></i> Inflation
+                        <div class="bottomBar bar3"></div>
+                    </button>
+                    <button id="btn-ds" onclick="setButton('btn-ds', 'bar4','chart4')">
+                        <i class="fa-solid fa-chart-pie"></i> Demographic Distribution
+                        <div class="bottomBar bar4"></div>
+                    </button>
+                    <button id="btn-unemp" onclick="setButton('btn-unemp', 'bar5','chart5')">
+                        <i class="fa-solid fa-chart-area"></i> Unemployment
+                        <div class="bottomBar bar5"></div>
+                    </button>
+                    <button id="btn-war" onclick="setButton('btn-war', 'bar6','chart6')">
+                        <i class="fa-solid fa-chart-simple"></i> War Deaths
+                        <div class="bottomBar bar6"></div>
+                    </button>
+
+                </div>
+
+
+                <div class="chartHolder">
+
+                    <div id="chart"></div>
+
+                    <div id="chart2">
+
+                        <div class="btn-holder">
+                            <button id="button1">SORT VALUE</button>
+                            <button id="button2">SORT TIME</button>
+                        </div>
+
+                    </div>
+
+                    <div id="chart3"></div>
+                    <div id="chart4"></div>
+                    <div id="chart5"></div>
+                    <div id="chart6"></div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <div></div>
+
+        <div class="footerHolder">
+            <footer>
+                <img src="img/logo.png" alt="">
+                <h1> 
+                    Analyzing Migration Patterns and Economic Impact: A Study of Syrian Migration Trends and Age Composition 
+                    <i class="fa-solid fa-chart-pie"></i>
+                </h1>
+
+                <p>
+                    <i class="fa-solid fa-rocket"></i> 
+                    By Thinh & Mohammad
+                </p>
+            </footer>
+        </div>
+
+ 
+  
+
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="js/charts.js"></script>
+        <script src="js/project.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
+
+
+

@@ -1,0 +1,106 @@
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #dfdfdf;
+  color: rgb(106, 106, 106);
+
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+circle {
+    opacity: 0.9;
+}
+
+.caption {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 0px;
+
+  }
+  
+
+
+
+
+
+
+#chart, #chart2, #chart3, #chart4, #chart5, #chart6 {
+
+  padding: 20px;
+  box-sizing: border-box;
+
+  border-radius: 5px;
+  
+  /* box-shadow: 0px 5px 15px rgba(0,0,0,0.1); */
+
+  animation: fadeIn 1s ease;
+
+  display: none;
+
+}#chart {
+  display: block;
+}
+
+#button1, #button2 {
+  background-color: #333;
+  border: none;
+  color: white;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0 2px;
+  border-radius: 5px;
+
+  padding: 5px 5px;
+  transition: all 0.3s ease;
+
+
+
+
+}
+
+#button1:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}#button2:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+
+
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  padding: 10px;
+  background: #69b3a2;
+  color: white;
+  border-radius: 5px;
+}
+
+#xaxis1{
+  font-family: 'Arial', sans-serif;
+    font-size: 40px;
+    fill: black;
+}
+
+
+
+.data-background {
+  
+  opacity: 0.8;
+ 
+}
+
+
