@@ -103,4 +103,18 @@ circle {
  
 }
 
+#chart2des, #chart1des, #chart3des, #chart4des, #chart5des, #chart6des
+{
+
+  position: absolute;
+  top: 107%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 18px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
 

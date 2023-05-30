@@ -168,7 +168,6 @@ var svg2 = d3.select("#chart2").append("svg") // assuming a new div "chart2" for
     .attr("width", width )
     .attr("height", height)
   .append("g");
-   
 
 // load the data
 d3.csv("idp.csv").then(function(data) {
@@ -183,8 +182,16 @@ d3.csv("idp.csv").then(function(data) {
   // Scale the range of the data in the domains
   x.domain(data.map(function(d) { return d.Year; }));
   y.domain([0, d3.max(data, function(d) { return d.IDPs; })]);
-
+  
   // append the rectangles for the bar chart
+  function formatValue(value) {
+    if (value >= 1e6) {
+      var millionValue = (value / 1e6).toFixed(1);
+      return millionValue + " M";
+    } else {
+      return value.toString(); // Return the original value if it's less than 1 million
+    }
+  }
   svg2.selectAll(".bar")
       .data(data)
       .enter()
@@ -198,11 +205,12 @@ d3.csv("idp.csv").then(function(data) {
       .on("mouseover",function(event,d){ //this function takes 2 arg, event = current event,d is current dataset
         var xPosition = parseFloat(d3.select(this).attr("x")) //convert x to floating point num
         var yPosition = parseFloat(d3.select(this).attr("y"))
+        var formattedValue = formatValue(d.IDPs);
         svg2.append("text") //we append text to tag svg no need enter because there is no dataset to bind the text to
             .attr("id","tooltip")
-            .attr("x",xPosition+(x.bandwidth()/2)-27)
+            .attr("x",xPosition+(x.bandwidth()/2)-25)
             .attr("y",yPosition-2)
-            .text(d.IDPs);
+            .text(formattedValue);
         d3.select(this)
             .transition()
             .attr("fill","orange");
@@ -241,6 +249,7 @@ d3.csv("idp.csv").then(function(data) {
         .append("p")
         .attr("class", "caption")
         .text("Figure 2: Syrian internally displaced persons (IDPs) by year");
+
 //button 3
 var sortOrder = false; // default value of sort order to ascending for first time click
 
@@ -498,7 +507,7 @@ svg4
   .data(data_ready)
   .enter()
   .append('text')
-  .text(function(d){ return d.data.percent_total })
+  .text(function(d){ return d.data.percent_total + "%"; })
   .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
   .style("text-anchor", "middle")
   .style("font-size", 13);
